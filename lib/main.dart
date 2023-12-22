@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutrition_ui/detailsItems.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFE8B0A8),
+      backgroundColor: Color(0xFF21BFBD),
       body: ListView(
         children: [
           Padding(
@@ -69,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               children: [
                 Text(
-                  'Healthy',
+                  'Delicious',
                   style: TextStyle(
                     color: Colors.white,
                     fontFamily: 'Montserrat',
@@ -111,14 +112,80 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: MediaQuery.of(context).size.height - 300.0,
                     child: ListView(
                       children: [
-                        _buildFoodItem('assets/images/plate1.png', 'Salmon Bowl', '\$40.00'),
-                        _buildFoodItem('assets/images/plate2.png', 'Spring Bowl', '\$37.00'),
-                        _buildFoodItem('assets/images/plate6.png', 'Avocado Bowl', '\$36.00'),
-                        _buildFoodItem('assets/images/plate5.png', 'Berry Bowl', '\$34.00'),
+                        _buildFoodItem('assets/images/plate4.png',
+                            'Salad Bowl', '\$30.00'),
+                        _buildFoodItem('assets/images/plate2.png',
+                            'Salmon Bowl', '\$37.00'),
+                        _buildFoodItem('assets/images/plate6.png',
+                            'Nachos Bowl', '\$28.00'),
+                        _buildFoodItem('assets/images/plate5.png', 'Chicken Salad Bowl',
+                            '\$25.00'),
                       ],
                     ),
                   ),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 65.0,
+                      width: 60.0,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.grey,
+                            style: BorderStyle.solid,
+                            width: 1.0),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.search,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 65.0,
+                      width: 60.0,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.grey,
+                            style: BorderStyle.solid,
+                            width: 1.0),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.shopping_basket,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 65.0,
+                      width: 120.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Color(0xFF1C1428),
+                        border: Border.all(
+                            color: Colors.grey,
+                            style: BorderStyle.solid,
+                            width: 1.0),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Checkout',
+                          style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           ),
@@ -132,7 +199,7 @@ class _MyHomePageState extends State<MyHomePage> {
       padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
       child: InkWell(
         onTap: () {
-          //  Navigator.of(context).push(route);
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailsItems(heroTag: imgPath,foodName: foodName,foodPrice: price,)));
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
