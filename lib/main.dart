@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               children: [
                 Text(
-                  'Delicious',
+                  'Healthy',
                   style: TextStyle(
                     color: Colors.white,
                     fontFamily: 'Montserrat',
@@ -113,13 +113,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ListView(
                       children: [
                         _buildFoodItem('assets/images/plate4.png',
-                            'Salad Bowl', '\$30.00'),
+                            'Salad Bowl', '\$26.00'),
                         _buildFoodItem('assets/images/plate2.png',
                             'Salmon Bowl', '\$37.00'),
-                        _buildFoodItem('assets/images/plate6.png',
-                            'Nachos Bowl', '\$28.00'),
+                        _buildFoodItem('assets/images/plate3.png',
+                            'Fruits Bowl', '\$28.00'),
                         _buildFoodItem('assets/images/plate5.png', 'Chicken Salad Bowl',
-                            '\$25.00'),
+                            '\$30.00'),
                       ],
                     ),
                   ),
